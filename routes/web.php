@@ -11,3 +11,4 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [AuthController::class, 'login']);
 Route::get('/gazi', [GaziController::class, 'deffault']);
+Route::post('/', [AuthController::class, 'auth_login']);
