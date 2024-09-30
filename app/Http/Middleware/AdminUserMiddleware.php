@@ -22,6 +22,5 @@ class AdminUserMiddleware
             Auth::logout();
             return redirect(url(''));
         }
-
     }
 }

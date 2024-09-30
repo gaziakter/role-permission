@@ -13,4 +13,9 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [AuthController::class, 'login']);
 Route::get('/gazi', [GaziController::class, 'deffault']);
 Route::post('/', [AuthController::class, 'auth_login']);
-Route::get('pannel/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('logout', [AuthController::class, 'logout']);
+
+Route::group(['middleware' => 'useradmin'], function(){
+    Route::get('pannel/dashboard', [DashboardController::class, 'dashboard']);
+});
+

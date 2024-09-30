@@ -17,6 +17,9 @@ class AuthController extends Controller
 
     public function auth_login(Request $request){
         //dd(Hash::make(12345));
+        if(!empty(Auth::check())){
+            return redirect('pannel/dashboard');
+        }
         $remember = !empty($request->remember) ? true : false;
         if(Auth::attempt([
             'email' => $request->email,
@@ -27,5 +30,10 @@ class AuthController extends Controller
         } else{
             return redirect()->back()->with('error', 'Please enter current email and possword');
         }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect(url(''));
     }
 }
