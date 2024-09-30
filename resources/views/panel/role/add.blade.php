@@ -14,11 +14,12 @@
                     <h5 class="card-title">Add New Role</h5>
 
                     <!-- General Form Elements -->
-                    <form>
+                    <form action="" method="post">
+                        {{csrf_field()}}
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Role Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input name="name" type="text" class="form-control" required>
                             </div>
                         </div>
 

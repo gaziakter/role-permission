@@ -15,4 +15,8 @@ class RoleController extends Controller
         public function add(){
             return view('panel.role.add');
         }
+
+        public function insert(Request $request){
+            dd($request->all());
+        }
 }
