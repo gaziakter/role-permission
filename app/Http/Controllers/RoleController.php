@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RoleModel;
 
 class RoleController extends Controller
 {
@@ -17,6 +18,10 @@ class RoleController extends Controller
         }
 
         public function insert(Request $request){
-            dd($request->all());
+            $save = new RoleModel;
+            $save->name = $request->name;
+            $save->save();
+
+            return redirect('panel/role')->with('succss', 'Role successfully created');
         }
 }
