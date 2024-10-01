@@ -36,6 +36,7 @@
                                 </td>
                             </tr>
                             @endforeach
+                        
                         </tbody>
                     </table>
                     <!-- End Table with stripped rows -->
