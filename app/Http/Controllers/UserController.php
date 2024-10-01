@@ -9,14 +9,14 @@ class UserController extends Controller
     //
     public function list(){
 
-        $data['getRecord'] = RoleModel::getRecord();
+        $data['getRecord'] = UserModel::getRecord();
         return view('panel.user.list', $data);
     }
 
         //
         public function add(){
 
-            return view('panel.role.add');
+            return view('panel.user.add');
         }
 
         public function insert(Request $request){
@@ -24,13 +24,13 @@ class UserController extends Controller
             $save->name = $request->name;
             $save->save();
 
-            return redirect('panel/role')->with('success', 'Role successfully created');
+            return redirect('panel/user')->with('success', 'User successfully created');
         }
 
         public function edit($id){
 
             $data['getRecord'] = RoleModel::getSingle($id);
-            return view('panel.role.edit', $data);
+            return view('panel.user.edit', $data);
         }
 
         public function update($id, Request $request){
@@ -39,7 +39,7 @@ class UserController extends Controller
             $save->name = $request->name;
             $save->save();
 
-            return redirect('panel/role')->with('success', 'Role successfully Updated');
+            return redirect('panel/user')->with('success', 'User successfully Updated');
         }
 
         public function delete($id){
@@ -47,6 +47,6 @@ class UserController extends Controller
             $save = RoleModel::getSingle($id);
             $save->delete();
 
-            return redirect('panel/role')->with('success', 'Role successfully deleted');
+            return redirect('panel/role')->with('success', 'User successfully deleted');
         }
 }

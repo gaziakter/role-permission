@@ -5,7 +5,7 @@ use App\Http\Controllers\GaziController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController
+use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
 //     return view('welcome');
