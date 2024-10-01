@@ -29,6 +29,8 @@ class RoleController extends Controller
         }
 
         public function edit($id){
-            return view('panel.role.edit');
+
+            $data['getRecord'] = RoleModel::getSingle($id);
+            return view('panel.role.edit', $data);
         }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Add New Role</h1>
+    <h1>Edit Role</h1>
 </div><!-- End Page Title -->
 
 <section class="section dashboard">
@@ -11,7 +11,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Add New Role</h5>
+                    <h5 class="card-title">Edit Role</h5>
 
                     <!-- General Form Elements -->
                     <form action="" method="post">
@@ -19,7 +19,7 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Role Name</label>
                             <div class="col-sm-10">
-                                <input name="name" type="text" class="form-control" required>
+                                <input name="name" value="{{$getRecord->name}}" type="text" class="form-control" required>
                             </div>
                         </div>
 

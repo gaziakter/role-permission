@@ -11,8 +11,13 @@ class RoleModel extends Model
 
     protected $table = 'role';
 
-    static function getRecord(){
+    static function getSingle($id){
         
+        return RoleModel::find($id);
+    }
+
+    static function getRecord(){
+
         return RoleModel::get();
     }
 }
