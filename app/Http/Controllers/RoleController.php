@@ -9,11 +9,14 @@ class RoleController extends Controller
 {
     //
     public function list(){
-        return view('panel.role.list');
+
+        $data['getRecord'] = RoleModel::getRecord();
+        return view('panel.role.list', $data);
     }
 
         //
         public function add(){
+
             return view('panel.role.add');
         }
 

@@ -10,4 +10,9 @@ class RoleModel extends Model
     use HasFactory;
 
     protected $table = 'role';
+
+    static function getRecord(){
+        
+        return RoleModel::get();
+    }
 }
