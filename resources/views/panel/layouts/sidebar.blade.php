@@ -24,6 +24,34 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) != 'category') collapsed @endif" href="{{url('panel/category')}}">
+          <i class="bi bi-person"></i>
+          <span>Category</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) != 'subcategory') collapsed @endif" href="{{url('panel/subcategory')}}">
+          <i class="bi bi-person"></i>
+          <span>Sub Category</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) != 'product') collapsed @endif" href="{{url('panel/product')}}">
+          <i class="bi bi-person"></i>
+          <span>Product</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) != 'sitting') collapsed @endif" href="{{url('panel/sitting')}}">
+          <i class="bi bi-person"></i>
+          <span>Sitting</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
       
 
     </ul>
