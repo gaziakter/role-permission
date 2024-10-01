@@ -46,9 +46,9 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link @if(Request::segment(2) != 'sitting') collapsed @endif" href="{{url('panel/sitting')}}">
+        <a class="nav-link @if(Request::segment(2) != 'setting') collapsed @endif" href="{{url('panel/setting')}}">
           <i class="bi bi-person"></i>
-          <span>Sitting</span>
+          <span>Setting</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
