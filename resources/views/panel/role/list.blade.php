@@ -30,8 +30,8 @@
                                 <td>{{$value->name}}</td>
                                 <td>{{$value->created_at}}</td>
                                 <td>
-                                    <a href="{{url('panel/role/edit/'.$value->id)}}">Edit</a>
-                                    <a href="{{url('panel/role/delete/'.$value->id)}}">Delete</a>
+                                    <a href="{{url('panel/role/edit/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="{{url('panel/role/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
