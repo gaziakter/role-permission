@@ -25,7 +25,7 @@ class RoleController extends Controller
             $save->name = $request->name;
             $save->save();
 
-            return redirect('panel/role')->with('succss', 'Role successfully created');
+            return redirect('panel/role')->with('success', 'Role successfully created');
         }
 
         public function edit($id){
@@ -40,6 +40,6 @@ class RoleController extends Controller
             $save->name = $request->name;
             $save->save();
 
-            return redirect('panel/role')->with('succss', 'Role successfully Updated');
+            return redirect('panel/role')->with('success', 'Role successfully Updated');
         }
 }
