@@ -27,4 +27,8 @@ class RoleController extends Controller
 
             return redirect('panel/role')->with('succss', 'Role successfully created');
         }
+
+        public function edit($id){
+            return view('panel.role.edit');
+        }
 }
