@@ -33,4 +33,13 @@ class RoleController extends Controller
             $data['getRecord'] = RoleModel::getSingle($id);
             return view('panel.role.edit', $data);
         }
+
+        public function update($id, Request $request){
+
+            $save = RoleModel::getSingle($id);
+            $save->name = $request->name;
+            $save->save();
+
+            return redirect('panel/role')->with('succss', 'Role successfully Updated');
+        }
 }
