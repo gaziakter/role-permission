@@ -42,4 +42,12 @@ class RoleController extends Controller
 
             return redirect('panel/role')->with('success', 'Role successfully Updated');
         }
+
+        public function delete($id){
+
+            $save = RoleModel::getSingle($id);
+            $save->delete();
+
+            return redirect('panel/role')->with('success', 'Role successfully deleted');
+        }
 }
