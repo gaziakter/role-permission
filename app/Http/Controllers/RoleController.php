@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RoleModel;
+use App\Models\PermissionModel;
 
 class RoleController extends Controller
 {
@@ -17,6 +18,8 @@ class RoleController extends Controller
         //
         public function add(){
 
+            $getPermission = PermissionModel::getRecord();
+            dd($getPermission);
             return view('panel.role.add');
         }
 
