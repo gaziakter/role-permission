@@ -19,8 +19,8 @@ class RoleController extends Controller
         public function add(){
 
             $getPermission = PermissionModel::getRecord();
-            dd($getPermission);
-            return view('panel.role.add');
+            $data['getPermission'] = $getPermission;
+            return view('panel.role.add', $data);
         }
 
         public function insert(Request $request){
