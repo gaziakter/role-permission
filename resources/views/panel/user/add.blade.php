@@ -23,9 +23,10 @@
                             </div>
                         </div>
 
+
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label"></label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
