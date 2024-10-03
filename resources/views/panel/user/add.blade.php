@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Add New Role</h1>
+    <h1>Add New User</h1>
 </div><!-- End Page Title -->
 
 <section class="section dashboard">
@@ -11,15 +11,38 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Add New Role</h5>
+                    <h5 class="card-title">Add New User</h5>
 
                     <!-- General Form Elements -->
                     <form action="" method="post">
                         {{csrf_field()}}
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Role Name</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">User Name</label>
                             <div class="col-sm-10">
                                 <input name="name" type="text" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Email Address</label>
+                            <div class="col-sm-10">
+                                <input name="email" type="email" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-10">
+                                <input name="password" type="password" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Choose Role</label>
+                            <div class="col-sm-10">
+                               <select class="form-control" name="" id="">
+                                    <option value="">Selete Role</option>
+                               </select>
                             </div>
                         </div>
 

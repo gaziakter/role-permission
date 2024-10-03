@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Role List</h5>
-                    <a href="{{url('panel/user/add')}}" class="btn btn-primary bx-pull-right">Add New Role</a>
+                    <a href="{{url('panel/user/add')}}" class="btn btn-primary bx-pull-right">Add New User</a>
 
                     <!-- Table with stripped rows -->
                     <table class="table table-striped">
