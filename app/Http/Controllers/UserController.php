@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RoleModel;
-use App\Models\UserModel;
+use App\Models\User;
+Use Hash;
 
 class UserController extends Controller
 {
@@ -22,8 +23,16 @@ class UserController extends Controller
         }
 
         public function insert(Request $request){
-            $save = new RoleModel;
-            $save->name = $request->name;
+
+            request()->validate([
+                'email' => 'required|email|unique:users',
+            ]);
+
+            $save = new User;
+            $save->name = trim($request->name);
+            $save->email = trim($request->email);
+            $save->password = Hash::make($request->password);
+            $save->role_id = trim($request->role_id);
             $save->save();
 
             return redirect('panel/user')->with('success', 'User successfully created');

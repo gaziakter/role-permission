@@ -40,7 +40,7 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Choose Role</label>
                             <div class="col-sm-10">
-                               <select class="form-control" name="" id="">
+                               <select class="form-control" name="role_id" required>
                                     <option value="">Selete Role</option>
                                     @foreach ($getRole as $value )
                                     <option value="{{$value->id}}">{{$value->name}}</option>   
