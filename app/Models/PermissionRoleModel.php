@@ -21,4 +21,10 @@ class PermissionRoleModel extends Model
             $save->save();
         }
     }
+
+    static public function getRolePermission($role_id){
+
+        return PermissionRoleModel::where('role_id', '=', $role_id)->get();
+
+    }
 }

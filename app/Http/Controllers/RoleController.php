@@ -37,7 +37,13 @@ class RoleController extends Controller
 
         public function edit($id){
 
+
             $data['getRecord'] = RoleModel::getSingle($id);
+
+            $data['getPermission'] = PermissionModel::getRecord();
+            $data['getRolePermission'] = PermissionRoleModel::getRolePermission($id);
+
+
             return view('panel.role.edit', $data);
         }
 
