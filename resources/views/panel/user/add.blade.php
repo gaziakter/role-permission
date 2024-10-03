@@ -17,7 +17,7 @@
                     <form action="" method="post">
                         {{csrf_field()}}
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">User Name</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                 <input name="name" type="text" class="form-control" required>
                             </div>
@@ -42,6 +42,9 @@
                             <div class="col-sm-10">
                                <select class="form-control" name="" id="">
                                     <option value="">Selete Role</option>
+                                    @foreach ($getRole as $value )
+                                    <option value="{{$value->id}}">{{$value->name}}</option>   
+                                    @endforeach
                                </select>
                             </div>
                         </div>

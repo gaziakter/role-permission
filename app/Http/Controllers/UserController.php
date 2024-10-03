@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RoleModel;
 use App\Models\UserModel;
 
 class UserController extends Controller
@@ -10,14 +11,14 @@ class UserController extends Controller
     //
     public function list(){
 
-        $data['getRecord'] = UserModel::getRecord();
-        return view('panel.user.list', $data);
+        return view('panel.user.list');
     }
 
         //
         public function add(){
 
-            return view('panel.user.add');
+            $data['getRole'] = RoleModel::getRecord();
+            return view('panel.user.add',  $data);
         }
 
         public function insert(Request $request){
