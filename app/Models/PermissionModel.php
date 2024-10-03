@@ -11,12 +11,12 @@ class PermissionModel extends Model
 
     protected $table = 'permission';
 
-    static function getSingle($id){
+    static public function getSingle($id){
         
         return RoleModel::find($id);
     }
 
-    static function getRecord(){
+    static public function getRecord(){
 
         $getPermission = PermissionModel::groupBy('groupby')->get();
         

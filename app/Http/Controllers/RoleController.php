@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\RoleModel;
 use App\Models\PermissionModel;
+use App\Models\PermissionRoleModel;
 
 class RoleController extends Controller
 {
@@ -24,9 +25,12 @@ class RoleController extends Controller
         }
 
         public function insert(Request $request){
+
             $save = new RoleModel;
             $save->name = $request->name;
             $save->save();
+
+            PermissionRoleModel::insertUpdateRecord($request->permission_id, $save->id);
 
             return redirect('panel/role')->with('success', 'Role successfully created');
         }
