@@ -53,6 +53,8 @@ class RoleController extends Controller
             $save->name = $request->name;
             $save->save();
 
+            PermissionRoleModel::insertUpdateRecord($request->permission_id, $save->id);
+
             return redirect('panel/role')->with('success', 'Role successfully Updated');
         }
 

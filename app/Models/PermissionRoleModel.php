@@ -13,6 +13,8 @@ class PermissionRoleModel extends Model
 
     static public function insertUpdateRecord($permission_ids, $role_id){
 
+        PermissionRoleModel::where('role_id', '=', $role_id)->delete();
+
         foreach($permission_ids as $permission_id){
 
             $save = new PermissionRoleModel;
