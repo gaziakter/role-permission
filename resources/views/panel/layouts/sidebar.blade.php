@@ -3,12 +3,12 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
       @php
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('user', Auth::user()->role_id);
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('role', Auth::user()->role_id);
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('category', Auth::user()->role_id);
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('subcategory', Auth::user()->role_id);
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('product', Auth::user()->role_id);
-        $PermissionUser = App\Models\PermissionRoleModel::getPermission('setting', Auth::user()->role_id);
+        $permissionuser = App\Models\PermissionRoleModel::getPermission('user', Auth::user()->role_id);
+        $permissionrole = App\Models\PermissionRoleModel::getPermission('role', Auth::user()->role_id);
+        $permissioncategory = App\Models\PermissionRoleModel::getPermission('category', Auth::user()->role_id);
+        $permissionsubcategory = App\Models\PermissionRoleModel::getPermission('subcategory', Auth::user()->role_id);
+        $permissionproduct = App\Models\PermissionRoleModel::getPermission('product', Auth::user()->role_id);
+        $permissionsetting = App\Models\PermissionRoleModel::getPermission('setting', Auth::user()->role_id);
       @endphp
       <li class="nav-item">
         <a class="nav-link @if(Request::segment(2) != 'dashboard') collapsed @endif" href="{{url('panel/dashboard')}}">
