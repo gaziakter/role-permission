@@ -12,8 +12,9 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Role List</h5>
+                    @if (!empty($PermissionAdd))
                     <a href="{{url('panel/role/add')}}" class="btn btn-primary bx-pull-right">Add New Role</a>
-
+                    @endif
                     <!-- Table with stripped rows -->
                     <table class="table table-striped">
                         <thead>
@@ -31,8 +32,12 @@
                                 <td>{{$value->name}}</td>
                                 <td>{{$value->created_at}}</td>
                                 <td>
+                                    @if (!empty($PermissionEdit))
                                     <a href="{{url('panel/role/edit/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                    @endif
+                                    @if (!empty($PermissionDelete))
                                     <a href="{{url('panel/role/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
