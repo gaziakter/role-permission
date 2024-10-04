@@ -48,18 +48,14 @@ class UserController extends Controller
 
         public function update($id, Request $request){
 
-            $save = RoleModel::getSingle($id);
-            $save->name = $request->name;
-            $save->save();
+            $user = User::getSingle($id);
+            $user->name = trim($request->name);
+            if(!empty($request->password)){
+                $user->password = Hash::make($request->password);
+            }
+            $user->role_id = trim($request->role_id);
+            $user->save();
 
             return redirect('panel/user')->with('success', 'User successfully Updated');
-        }
-
-        public function delete($id){
-
-            $save = RoleModel::getSingle($id);
-            $save->delete();
-
-            return redirect('panel/role')->with('success', 'User successfully deleted');
         }
 }
