@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\RoleModel;
 use App\Models\PermissionModel;
 use App\Models\PermissionRoleModel;
+use Auth;
 
 class RoleController extends Controller
 {
     //
     public function list(){
 
+        $permissionrole = PermissionRoleModel::getPermission('role', Auth::user()->role_id);
+        if(empty($permissionrole)){
+            abort('404');
+        }
         $data['getRecord'] = RoleModel::getRecord();
         return view('panel.role.list', $data);
     }
