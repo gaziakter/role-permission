@@ -12,7 +12,8 @@ class UserController extends Controller
     //
     public function list(){
 
-        return view('panel.user.list');
+        $data['getRecord'] = User::getRecord();
+        return view('panel.user.list',  $data);
     }
 
         //

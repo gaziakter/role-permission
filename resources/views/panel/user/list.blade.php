@@ -20,12 +20,24 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Date</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Role</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-
+                            @foreach($getRecord as $value)
+                            <tr>
+                                <th scope="row">{{$value->id}}</th>
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->email}}</td>
+                                <td>{{$value->role_name}}</td>
+                                <td>
+                                    <a href="{{url('panel/user/edit/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="{{url('panel/user/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
                         
                         </tbody>
                     </table>
