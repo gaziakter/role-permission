@@ -29,4 +29,8 @@ class PermissionRoleModel extends Model
         return PermissionRoleModel::where('role_id', '=', $role_id)->get();
 
     }
+
+    static public function getPermission($slug, $role_id){
+
+    }
 }

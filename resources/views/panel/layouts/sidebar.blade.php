@@ -2,7 +2,9 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
+      @php
+        $PermissionUser = App\Models\PermissionRoleModel::getPermission('user', Auth::user()->role_id);
+      @endphp
       <li class="nav-item">
         <a class="nav-link @if(Request::segment(2) != 'dashboard') collapsed @endif" href="{{url('panel/dashboard')}}">
           <i class="bi bi-grid"></i>
