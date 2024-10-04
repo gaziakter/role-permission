@@ -58,4 +58,11 @@ class UserController extends Controller
 
             return redirect('panel/user')->with('success', 'User successfully Updated');
         }
+
+        public function delete($id){
+            $user = User::getSingle($id);
+            $user->delete();
+
+            return redirect('panel/user')->with('success', 'User successfully Deleted');
+        }
 }
