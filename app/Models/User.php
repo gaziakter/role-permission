@@ -51,4 +51,9 @@ class User extends Authenticatable
         ->join('role', 'role.id', '=', 'users.role_id')
         ->orderBy('users.id', 'desc')->get();
     }
+
+    static function getSingle($id){
+        
+        return self::find($id);
+    }
 }

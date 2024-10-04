@@ -41,7 +41,8 @@ class UserController extends Controller
 
         public function edit($id){
 
-            $data['getRecord'] = RoleModel::getSingle($id);
+            $data['getRecord'] = User::getSingle($id);
+            $data['getRole'] = RoleModel::getRecord($id);
             return view('panel.user.edit', $data);
         }
 

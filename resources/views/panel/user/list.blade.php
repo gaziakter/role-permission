@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pagetitle">
-    <h1>Role</h1>
+    <h1>User</h1>
 </div><!-- End Page Title -->
 
 <section class="section dashboard">
@@ -11,7 +11,7 @@
             @include('_message')
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Role List</h5>
+                    <h5 class="card-title">User List</h5>
                     <a href="{{url('panel/user/add')}}" class="btn btn-primary bx-pull-right">Add New User</a>
 
                     <!-- Table with stripped rows -->
